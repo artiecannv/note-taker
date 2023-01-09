@@ -8,7 +8,7 @@ function updateDb(id, notesArray) {
         if (deleteNote === notesArray[i].id) {
             notesArray.splice(i, 1);
             fs.writeFileSync(
-                
+
             )
         }
-}
+}};
