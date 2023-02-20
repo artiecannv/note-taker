@@ -11,8 +11,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//! TODO: get route for api/notes page (loads notes.html from public)
-//! TODO: post route for api/notes to create new note
+
 //* TODO: save function for any changes
 
 const saveFunction = (notes) => {
@@ -33,6 +32,19 @@ app.get("/notes", function (req, res) {
   res.sendFile(path.join(__dirname, "../public/notes.html"));
 });
 
+//* TODO: get route for api/notes page (loads notes.html from public)
+router.get("/notes", (req, res) => {
+  let currentNotes = notes;
+  res.json(currentNotes);
+});
+
+//* TODO: post route for api/notes to create new note
+router.post("/notes", (req, res) => {
+  req.body.id = uuidv4();
+  const newNote = createNewNote(req.body, notes);
+  res.json(newNote);
+});
+
 
 //* TODO: delete route, for deletion
 
@@ -45,6 +57,7 @@ app.delete("/notes/:id", (req, res) => {
   saveFunction(tempDb);
   return res.json(`${req.params.id} has been deleted`);
 });
+
 
 
 
