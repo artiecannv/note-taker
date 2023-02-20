@@ -16,3 +16,9 @@ app.use(express.json());
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}. Welcome!`);
   });
+
+  //! TODO: get route for home page
+  //! TODO: get route for notes page (pulls from json db)
+  //! TODO: get route for api/notes page (loads notes.html from public)
+  //! TODO: post route for api/notes to create new note
+  //! TODO: delete route, for deletion
