@@ -32,13 +32,13 @@ app.get("/notes", function (req, res) {
 });
 
 //* TODO: get route for api/notes page (loads notes.html from public)
-router.get("/notes", (req, res) => {
+app.get("/notes", (req, res) => {
   let currentNotes = notes;
   res.json(currentNotes);
 });
 
 //* TODO: post route for api/notes to create new note
-router.post("/notes", (req, res) => {
+app.post("/notes", (req, res) => {
   req.body.id = uuidv4();
   const newNote = {
     id: req.body.id,
