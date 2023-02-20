@@ -13,7 +13,7 @@ app.use(express.json());
 
 //! TODO: get route for api/notes page (loads notes.html from public)
 //! TODO: post route for api/notes to create new note
-//! TODO: delete route, for deletion
+//* TODO: save function for any changes
 
 const saveFunction = (notes) => {
   fs.writeFile("./db/db.json", JSON.stringify(notes), (err) => {
@@ -34,9 +34,17 @@ app.get("/notes", function (req, res) {
 });
 
 
+//* TODO: delete route, for deletion
 
-
-
+app.delete("/notes/:id", (req, res) => {
+  const noteIndex = db.findIndex((currentIndex) => {
+    return currentIndex.id === req.params.id;
+  });
+  const tempDb = db;
+  tempDb.splice(currentIndex, 1);
+  saveFunction(tempDb);
+  return res.json(`${req.params.id} has been deleted`);
+});
 
 
 
