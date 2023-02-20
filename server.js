@@ -22,3 +22,11 @@ app.listen(PORT, () => {
   //! TODO: get route for api/notes page (loads notes.html from public)
   //! TODO: post route for api/notes to create new note
   //! TODO: delete route, for deletion
+
+ const saveFunction = (notes) => {
+  fs.writeFile('./db/db.json', JSON.stringify(notes), (err) => {
+    if (err) {
+      console.error(err)
+    } 
+  });
+ }; 
