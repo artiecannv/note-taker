@@ -11,7 +11,6 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//! TODO: get route for notes page (pulls from json db)
 //! TODO: get route for api/notes page (loads notes.html from public)
 //! TODO: post route for api/notes to create new note
 //! TODO: delete route, for deletion
@@ -24,10 +23,21 @@ const saveFunction = (notes) => {
   });
 };
 
-//! TODO: get route for home page
+//* TODO: get route for home page
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "../public/index.html"));
 });
+
+//* TODO: get route for notes page (pulls from json db)
+app.get("/notes", function (req, res) {
+  res.sendFile(path.join(__dirname, "../public/notes.html"));
+});
+
+
+
+
+
+
 
 
 
