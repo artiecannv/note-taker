@@ -2,34 +2,29 @@
 
 ## Description
 
-
+This application provides an easy experience to save, update, or delete notes for future use. I actually use this at work to get action items from meetings easier.
 
 ## Installation
 
-
+To use this application on your local machine, please run '$ npm i' in the terminal to install all necessary packages
 
 ## Usage
 
-Add the video link and a screenshot of the original page
+![screenshot](./images/note-taker-mockup.png)
 
+## Credits
 
-## Credits 
-
-Worked with Christin Carter, a fellow classmate of mine
+Worked with Christin Carter and Josh Taylor, a few classmates of mine
 
 ## License
 
 N/A
-
-## Tests
-
-
 
 ## Contact for Questions
 
 Email me at: thefiftharthur@gmail.com
 GitHub Profile: https://github.com/artiecannv
 
-## GitHub Repository
+## Deployed URL
 
-https://github.com/artiecannv/note-taker
+https://arthur-note-taker.herokuapp.com/
